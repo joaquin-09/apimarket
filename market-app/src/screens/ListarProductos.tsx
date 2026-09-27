@@ -37,7 +37,7 @@ const ListarProductos = ({ navigation }: Props): JSX.Element => {
       <Image style={styles.imagen} source={{ uri: item.fotografia }} />
       <View style={styles.info}>
         <Text style={styles.nombre}>{item.nombre}</Text>
-        <Text style={styles.precio}>${item.precio_venta.toFixed(2)}</Text>
+        <Text style={styles.precio}>${Number(item.precio_venta).toFixed(2)}</Text>
         <View style={[styles.badge, { backgroundColor: item.cantidad > 0 ? '#edfaf3' : '#fdf0ee' }]}>
           <Text style={{ color: item.cantidad > 0 ? colors.success : colors.danger, fontSize: 11, fontWeight: '700' }}>
             {item.cantidad > 0 ? `${item.cantidad} en stock` : 'Agotado'}
