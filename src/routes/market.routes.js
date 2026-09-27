@@ -30,7 +30,6 @@ router.get('/productos/:id', (req, res, next) => {
 
 // Rutas de CRUD para usuarios
 router.get('/usuarios', getUsuarios);
-router.post('/usuarios/login', getUsuario);
 router.post('/newusuarios', postUsuarios);
 router.put('/usuarios/:id', putUsuarios);
 router.delete('/usuarios/:id', deleteUsuarios);
