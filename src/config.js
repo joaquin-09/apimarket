@@ -1,9 +1,11 @@
-import{config} from 'dotenv'
-config()
+// src/config.js
+import mysql from 'mysql2/promise';
+import 'dotenv/config';
 
-export const PORT= process.env.PORT || 3000
-export const DB_HOST=process.env.DB_HOST || 'mysql.railway.internal'
-export const DB_PORT=process.env.DB_PORT || 3306
-export const DB_USER=process.env.DB_USER || 'root'
-export const DB_PASSWORD=process.env.DB_PASSWORD || 'szgJFkfmagMrDcQQsLgNURiNZlbqopzI'
-export const DB_DATABASE=process.env.DB_DATABASE || 'railway'
+export const pool = mysql.createPool({
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  port: process.env.MYSQLPORT,
+});
