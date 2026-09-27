@@ -39,3 +39,6 @@ router.put('/productos/:id', putProductos);
 router.delete('/productos/:id', deleteProductos);
 
 export default router;
+
+router.post('/usuarios/registro', postRegistro);
+router.post('/usuarios/login', postLogin);
