@@ -96,17 +96,17 @@
       }
     };
     
-    export const getProductos=async(req,res)=>{
-      try{
-        const [rows] = await pool.query("SELECT * FROM productos");
-        if (rows.length <= 0) {
-          return res.status(404).json({ message: "No hay productos registrados" });
-        }
-        res.json({ productos: rows });
-      }catch(error){
-          return res.status(500).json({ message: "Algo salio mal" });
-      }
-    };
+  export const getProductos = async (req, res) => {
+  try {
+    const [rows] = await pool.query("SELECT * FROM productos");
+    if (rows.length <= 0) {
+      return res.status(404).json({ message: "No hay productos registrados" });
+    }
+    res.json(rows);   // ← array directo, sin envolver
+  } catch (error) {
+    return res.status(500).json({ message: "Algo salio mal" });
+  }
+};
 
     export const getProductosId=async(req,res)=>{
       try{
