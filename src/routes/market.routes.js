@@ -11,6 +11,8 @@ import {
   putProductos,
   deleteProductos,
   getProductosId,
+  postRegistro,
+  postLogin,          // ← faltaba este import
 } from '../controllers/market.controllers.js';
 
 const router = Router();
@@ -38,7 +40,8 @@ router.post('/productos', postProductos);
 router.put('/productos/:id', putProductos);
 router.delete('/productos/:id', deleteProductos);
 
-export default router;
-
+// Autenticación
 router.post('/usuarios/registro', postRegistro);
-router.post('/usuarios/login', postLogin);
+router.post('/usuarios/login', postLogin);   // ← nota el conflicto abajo
+
+export default router;   // ← movido al final
