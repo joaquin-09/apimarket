@@ -1,5 +1,5 @@
 // src/services/api.ts
-const API_URL = 'https://apimarket-production-xxxx.up.railway.app';
+const API_URL = 'https://apimarket-production-c251.up.railway.app';
 
 interface ApiErrorBody {
   message: string;
